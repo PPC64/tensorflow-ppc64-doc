@@ -3,7 +3,9 @@ How to build tensorflow from source on POWER.
 
 **The next steps were tested only in Ubuntu 16.10 _without_ GPU support**
 
-To build Tensorflow from source first we have to build bazel (v0.45).
+As of commit https://github.com/tensorflow/tensorflow/commit/efe5376f3dec8fcc2bf3299a4ff4df6ad3591c88 it is not possible to build Tensorflow from source using https://github.com/ibmsoe/bazel.git since this fork does not support bazel v0.4.5
+
+To build Tensorflow from source first we have to build bazel (v0.4.5.).
 Bazel, in its turn, also need its dependencies to be built from source. They are protobuf (v3.0.0) and grpc-java plugin (v1.0.0).
 
 ## Building protobuf
@@ -41,7 +43,7 @@ export PATH=$(pwd):$PATH
 sudo apt-get install python-numpy python-dev python-pip python-wheel
 git clone https://github.com/tensorflow/tensorflow.git
 cd tensorflow
-# if you are using gcc-6, run sed -i "s/march=native/mcpu=native/g" configure first
+sed -i "s/march=native/mcpu=native/g"
 ./configure
 bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
 ```
