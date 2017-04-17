@@ -41,9 +41,8 @@ export PATH=$(pwd):$PATH
 ## Building tensorflow
 ```bash
 sudo apt-get install python-numpy python-dev python-pip python-wheel
-git clone https://github.com/tensorflow/tensorflow.git
+git clone https://github.com/PPC64/tensorflow.git
 cd tensorflow
-sed -i "s/march=native/mcpu=native/g"
 ./configure
 bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
 ```
