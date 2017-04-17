@@ -46,3 +46,7 @@ cd tensorflow
 ./configure
 bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
 ```
+
+Accordingly to the tensorflow's installation tutorial:
+> By default, building TensorFlow from sources consumes a lot of RAM.
+> If RAM is an issue on your system, you may limit RAM usage by specifying --local_resources 2048,.5,1.0 while invoking bazel.
