@@ -6,7 +6,7 @@ How to build tensorflow from source on POWER.
 As of commit https://github.com/tensorflow/tensorflow/commit/efe5376f3dec8fcc2bf3299a4ff4df6ad3591c88 it is not possible to build Tensorflow from source using https://github.com/ibmsoe/bazel.git since this fork does not support bazel v0.4.5
 
 To build Tensorflow from source first we have to build bazel (v0.4.5.).
-Bazel, in its turn, also need its dependencies to be built from source. They are protobuf (v3.0.0) and grpc-java plugin (v1.0.0).
+Bazel, in its turn, also needs its dependencies to be built from source. They are protobuf (v3.0.0) and grpc-java plugin (v1.0.0).
 
 ## Building protobuf
 ```bash
@@ -45,6 +45,8 @@ git clone https://github.com/PPC64/tensorflow.git
 cd tensorflow
 ./configure
 bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
+bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+sudo pip install /tmp/tensorflow_pkg/tensorflow*.whl
 ```
 
 Accordingly to the tensorflow's installation tutorial:
