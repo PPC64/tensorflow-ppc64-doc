@@ -1,7 +1,7 @@
 # tensorflow-ppc64-doc
 How to build tensorflow from source on POWER.
 
-**The next steps were tested only in Ubuntu 16.10 _without_ GPU support**
+**The next steps were tested only in Ubuntu 16.10 and 17.04 _without_ GPU support**
 
 As of commit https://github.com/tensorflow/tensorflow/commit/efe5376f3dec8fcc2bf3299a4ff4df6ad3591c88 it is not possible to build Tensorflow from source using https://github.com/ibmsoe/bazel.git since this fork does not support bazel v0.4.5
 
